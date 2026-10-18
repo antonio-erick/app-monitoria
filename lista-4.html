@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Questões Nº 4 | Morfofisiologia II</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">A</div>
+        <div class="brand-text">
+          <h1>Monitoria de Morfofisiologia dos Sistemas II</h1>
+          <p>Afya Faculdade de Parnaíba</p>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="btn-back">← Todas as Listas</a>
+        <button class="btn-icon" id="themeToggle" type="button">
+          <span id="themeIcon">🌙</span>
+          <span id="themeText">Modo Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="results-panel" id="resultsPanel">
+      <div class="results-header">
+        <h3>Resultado da Avaliação</h3>
+        <p id="resultsFeedback"></p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statScore">0%</div>
+          <div class="stat-label">Aproveitamento</div>
+        </div>
+        <div class="stat-card stat-correct">
+          <div class="stat-value" id="statCorrect">0</div>
+          <div class="stat-label">Acertos</div>
+        </div>
+        <div class="stat-card stat-wrong">
+          <div class="stat-value" id="statWrong">0</div>
+          <div class="stat-label">Erros</div>
+        </div>
+        <div class="stat-card stat-unanswered">
+          <div class="stat-value" id="statUnanswered">0</div>
+          <div class="stat-label">Em Branco</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar">
+      <div class="status-top">
+        <span class="status-info" id="activeQuizTitle">Lista de Questões Nº 4</span>
+        <span class="status-count" id="progressText">0 de 3 respondidas</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all" type="button">Todas as Questões</button>
+      <button class="filter-btn" data-filter="correct" type="button">Apenas Acertos</button>
+      <button class="filter-btn" data-filter="wrong" type="button">Erros / Em Branco</button>
+    </div>
+
+    <div class="questions-list" id="questionsContainer"></div>
+
+    <div class="quiz-actions">
+      <button class="btn-primary" id="btnGrade" type="button">Ver Gabarito e Avaliar Desempenho</button>
+      <button class="btn-secondary" id="btnReset" type="button">Refazer Lista</button>
+      <a href="index.html" class="btn-secondary">← Voltar ao Menu Principal</a>
+    </div>
+
+    <div class="reference-box">
+      <strong>Referências:</strong> TORTORA, Gerard J.; DERRICKSON, Bryan. <em>Princípios de Anatomia e Fisiologia</em>. 16. ed. Rio de Janeiro: Guanabara Koogan, 2023. E-book. p.671. ISBN 9788527739368.
+    </div>
+  </main>
+
+  <script>
+    window.QUIZ_DATA = {
+      id: "lista_4",
+      title: "Lista de Questões Nº 4 — Sistema Cardiovascular",
+      questions: [
+        {
+          id: 1,
+          stem: "O coração, embora seja muito potente, é relativamente pequeno, aproximadamente do mesmo tamanho (mas não do mesmo formato) de um punho cerrado; tem aproximadamente 12 cm em seu eixo longo, 9 cm de largura no maior ponto e 6 cm de profundidade (no sentido anterior para posterior), com uma massa média de 250 g em mulheres adultas e 300 g em homens adultos. Sobre a anatomia do coração, marque o correto.",
+          options: {
+            a: "O coração está localizado no mediastino, repousando inferiormente ao diafragma e próximo ao plano mediano da cavidade do omento.",
+            b: "O coração está localizado na cavidade pleural, repousando superiormente ao diafragma e próximo ao plano mediano da cavidade torácica.",
+            c: "O coração está localizado na cavidade pleural, repousando inferiormente ao diafragma e próximo ao plano mediano da cavidade torácica.",
+            d: "O coração está localizado no mediastino, repousando sobre o diafragma e próximo ao plano mediano da cavidade torácica."
+          },
+          answer: "d",
+          explanation: "Alternativa D. Todas as outras descrições estão erradas, pois o coração não está inferiormente ou superiormente ao mediastino, mas sim nele. Além disso, a cavidade pleural é um espaço entre as camadas do pulmão, então não há lógica em afirmar que o coração está localizado nesse espaço. A única opção restante é a última, que está correta."
+        },
+        {
+          id: 2,
+          stem: "Os nutrientes não conseguem se difundir rápido o suficiente do sangue nas câmaras cardíacas para suprir todas as camadas de células que constituem a parede do coração. Por esse motivo, o miocárdio tem sua própria rede de vasos sanguíneos, a circulação coronariana ou circulação cardíaca. As artérias coronárias ramificam-se a partir da porção ascendente da aorta e circundam o coração como uma coroa circunda a cabeça de uma pessoa. Enquanto o coração se contrai, há pouco fluxo sanguíneo nas artérias coronárias porque elas são \"espremidas\". Quando o coração relaxa, no entanto, a elevada pressão do sangue na aorta impulsiona sangue pelas artérias coronárias, para os capilares e depois para as veias cardíacas. Sobre o funcionamento da circulação cardíaca, marque a opção mais adequada.",
+          options: {
+            a: "A circulação sistêmica inicia quando o átrio direito ejeta o sangue na sístole, através do lúmen da artéria aorta ascendente.",
+            b: "A circulação sistêmica inicia quando o átrio esquerdo ejeta o sangue na diástole, através do lúmen da artéria aorta ascendente.",
+            c: "A circulação sistêmica inicia quando o ventrículo esquerdo ejeta o sangue na sístole, através do lúmen da artéria aorta ascendente.",
+            d: "A circulação sistêmica inicia quando o ventrículo direito ejeta o sangue na sístole, através do lúmen da artéria aorta ascendente."
+          },
+          answer: "c",
+          explanation: "Alternativa C. O átrio direito recebe o sangue das veias cavas e o envia para o ventrículo direito, que inicia o processo da circulação local na artéria pulmonar. Após isso, o sangue é oxigenado pelos alvéolos e enviado de volta ao coração pelas veias pulmonares. Ao chegar de volta, entra no átrio esquerdo, que encaminha o sangue para o ventrículo esquerdo, que através da sístole ventricular ejeta o sangue na artéria aorta ascendente."
+        },
+        {
+          id: 3,
+          stem: "Em cada ciclo cardíaco, os átrios e os ventrículos contraem-se e relaxam de modo alternado, forçando sangue das áreas de pressão mais alta para áreas de menor pressão. Quando uma câmara do coração se contrai, a pressão sanguínea em seu interior aumenta. As pressões no lado direito do coração são consideravelmente menores. Cada ventrículo, entretanto, expele o mesmo volume de sangue por batimento e existe o mesmo padrão para as duas câmaras de bombeamento. Quando a frequência cardíaca é 75 bpm (bpm), um ciclo cardíaco dura 0,8 segundo. Marque a alternativa que lista adequadamente as fases do ciclo cardíaco e sua ordem.",
+          options: {
+            a: "Contração atrial, contração isovolumétrica, ejeção ventricular, relaxamento isovolumétrico e contração atrial.",
+            b: "Contração ventricular, contração isovolumétrica, ejeção ventricular, relaxamento isovolumétrico e contração ventricular.",
+            c: "Contração atrial, contração isovolumétrica, ejeção ventricular, relaxamento isovolumétrico e contração ventricular.",
+            d: "Contração ventricular, contração isovolumétrica, ejeção ventricular, relaxamento isovolumétrico e contração atrial."
+          },
+          answer: "a",
+          explanation: "Alternativa A. O ciclo cardíaco começa com a contração atrial, que preenche os ventrículos. Em seguida, ocorre a contração isovolumétrica ventricular (valvas fechadas, aumento de pressão), culminando na ejeção ventricular do sangue. Por fim, as valvas se fecham no relaxamento isovolumétrico, antecedendo o reinício do ciclo com nova contração atrial."
+        }
+      ]
+    };
+  </script>
+  <script src="quiz.js"></script>
+</body>
+</html>

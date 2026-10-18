@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulado Avaliação N1 | Morfofisiologia II</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">A</div>
+        <div class="brand-text">
+          <h1>Monitoria de Morfofisiologia dos Sistemas II</h1>
+          <p>Afya Faculdade de Parnaíba</p>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="btn-back">← Todas as Listas</a>
+        <button class="btn-icon" id="themeToggle" type="button">
+          <span id="themeIcon">🌙</span>
+          <span id="themeText">Modo Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="results-panel" id="resultsPanel">
+      <div class="results-header">
+        <h3>Resultado da Avaliação</h3>
+        <p id="resultsFeedback"></p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statScore">0%</div>
+          <div class="stat-label">Aproveitamento</div>
+        </div>
+        <div class="stat-card stat-correct">
+          <div class="stat-value" id="statCorrect">0</div>
+          <div class="stat-label">Acertos</div>
+        </div>
+        <div class="stat-card stat-wrong">
+          <div class="stat-value" id="statWrong">0</div>
+          <div class="stat-label">Erros</div>
+        </div>
+        <div class="stat-card stat-unanswered">
+          <div class="stat-value" id="statUnanswered">0</div>
+          <div class="stat-label">Em Branco</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar">
+      <div class="status-top">
+        <span class="status-info" id="activeQuizTitle">Simulado Avaliação N1</span>
+        <span class="status-count" id="progressText">0 de 15 respondidas</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all" type="button">Todas as Questões</button>
+      <button class="filter-btn" data-filter="correct" type="button">Apenas Acertos</button>
+      <button class="filter-btn" data-filter="wrong" type="button">Erros / Em Branco</button>
+    </div>
+
+    <div class="questions-list" id="questionsContainer"></div>
+
+    <div class="quiz-actions">
+      <button class="btn-primary" id="btnGrade" type="button">Ver Gabarito e Avaliar Desempenho</button>
+      <button class="btn-secondary" id="btnReset" type="button">Refazer Simulado</button>
+      <a href="index.html" class="btn-secondary">← Voltar ao Menu Principal</a>
+    </div>
+  </main>
+
+  <script>
+    window.QUIZ_DATA = {
+      id: "simulado_n1",
+      title: "Simulado de Sistema Endócrino e Sistema Digestório (Avaliação N1)",
+      questions: [
+        {
+          id: 1,
+          stem: "A hipófise é uma glândula endócrina em formato de ervilha, com 1 a 1,5 cm de diâmetro, situada na fossa hipofisial da sela turca do esfenóide. Sabendo que ela apresenta duas divisões anatômicas, marque a alternativa que lista corretamente o nome da região e o hormônio produzido nela.",
+          options: {
+            a: "Neuro-hipófise, que produz a vasopressina.",
+            b: "Adeno-hipófise, que produz a ocitocina.",
+            c: "Adeno-hipófise, que produz a tireotrofina.",
+            d: "Neuro-hipófise, que produz a ocitocina."
+          },
+          answer: "c",
+          explanation: "Alternativa C. A lógica é que a neuro-hipófise não produz nenhum hormônio, apenas armazena ADH e ocitocina provenientes do hipotálamo. Dentre todos os hormônios produzidos pela adeno-hipófise, apenas a tireotrofina está listada."
+        },
+        {
+          id: 2,
+          stem: "A glândula tireoide, em forma de borboleta, está localizada imediatamente abaixo da laringe. É composta pelos lobos direito e esquerdo, um em cada lado da traqueia. Notavelmente, seus lobos são conectados por uma estrutura. Marque a alternativa que cita corretamente o nome dessa estrutura e sua posição anatômica.",
+          options: {
+            a: "Conectados pelo istmo, anterior à traquéia.",
+            b: "Conectados pelo lobo piramidal, anterior à traquéia.",
+            c: "Conectados pelo istmo, posterior à traquéia.",
+            d: "Conectados pelo lobo piramidal, posterior à traquéia."
+          },
+          answer: "a",
+          explanation: "Alternativa A. O istmo é o que liga os dois lobos tireoidianos e está anteriormente à traqueia, bem no meio dos lobos. A parte piramidal está localizada superiormente ao istmo."
+        },
+        {
+          id: 3,
+          stem: "Na tireóide, encontram-se várias massas pequenas e arredondadas de tecido, denominadas glândulas paratireoides. Cada uma apresenta uma massa de cerca de 40 mg (0,04 g). Sabendo disso, selecione a opção que enumera corretamente o número de glândulas paratireóides usualmente presentes no corpo humano e suas localizações.",
+          options: {
+            a: "Quatro, uma superior e outra inferior em cada lobo da tireóide.",
+            b: "Três, uma superior e outra inferior no lobo direito, e somente uma no lobo esquerdo.",
+            c: "Duas, uma em cada lobo da tireóide.",
+            d: "Uma, localizada no lobo piramidal da tireóide."
+          },
+          answer: "a",
+          explanation: "Alternativa A. Há um total de quatro glândulas paratireóides, sendo duas em cada lobo, uma inferior e outra superior."
+        },
+        {
+          id: 4,
+          stem: "As glândulas suprarrenais pareadas, cada uma localizada superiormente a cada rim no espaço retroperitoneal, apresentam a forma de uma pirâmide achatada. No adulto, cada glândula suprarrenal mede 3 a 5 cm de altura, 2 a 3 cm de largura e um pouco menos de 1 cm de espessura, com uma massa de 3,5 a 5 g, correspondendo a apenas metade de seu tamanho ao nascimento. Acerca da anatomia e fisiologia das adrenais, marque a alternativa correta.",
+          options: {
+            a: "O córtex é a região externa das adrenais, secretando epinefrina e norepinefrina.",
+            b: "A medula é a região externa das adrenais, secretando cortisol e aldosterona.",
+            c: "O córtex é a região interna das adrenais, secretando cortisol e aldosterona.",
+            d: "A medula é a região interna das adrenais, secretando epinefrina e norepinefrina."
+          },
+          answer: "d",
+          explanation: "Alternativa D. As glândulas suprarrenais apresentam duas divisões: córtex (externo) e medula (interno). No córtex, são produzidos glicocorticoides (cortisol), mineralocorticoides (aldosterona) e andrógenos. Na medula, são produzidos a epinefrina (adrenalina) e noradrenalina (norepinefrina)."
+        },
+        {
+          id: 5,
+          stem: "O pâncreas é um órgão achatado, que mede cerca de 12,5 a 15 cm de comprimento e está localizado na concavidade da curvatura do duodeno, a primeira parte do intestino delgado. É constituído por cabeça, corpo e cauda. Cerca de 99% das células do pâncreas são células exócrinas organizadas em agrupamentos denominados ácinos pancreáticos. Os ácinos do pâncreas produzem enzimas digestivas que fluem para o sistema digestório por meio de uma rede de ductos. Espalhados entre os ácinos pancreáticos, existem 1 a 2 milhões de minúsculos agrupamentos de células endócrinas, denominados ilhotas pancreáticas ou ilhotas de Langerhans. No que tange a anatomofisiologia do pâncreas, marque a alternativa incorreta.",
+          options: {
+            a: "As células alfa secretam glucagon.",
+            b: "As células beta secretam insulina.",
+            c: "As células delta secretam somatostatina.",
+            d: "As células gama secretam polipeptídio pancreático."
+          },
+          answer: "d",
+          explanation: "Alternativa D. Não existe literatura confiável que utilize o termo \"células gama\" para as células secretoras de polipeptídio pancreático, do pâncreas."
+        },
+        {
+          id: 6,
+          stem: "Os ovários, um par de corpos ovais localizados na cavidade pélvica feminina, produzem vários hormônios esteróides, incluindo dois estrogênios (estradiol e estrona) e progesterona. Esses hormônios sexuais femininos, juntamente com o hormônio foliculoestimulante (FSH) e o hormônio luteinizante (LH) da adeno-hipófise, regulam o ciclo menstrual, mantêm a gravidez e preparam as glândulas mamárias para a lactação. Além disso, promovem o aumento das mamas e o alargamento dos quadris na puberdade e ajudam a manter essas características sexuais secundárias femininas. Acerca das gônadas femininas, selecione a alternativa correta.",
+          options: {
+            a: "O estrogênio e a relaxina são os responsáveis por regular o ciclo reprodutivo feminino, manter a gravidez, preparar as glândulas mamárias para a lactação e promover o desenvolvimento e a manutenção das características sexuais secundárias femininas.",
+            b: "O estrogênio e a progesterona são os responsáveis por regular o ciclo reprodutivo feminino, manter a gravidez, preparar as glândulas mamárias para a lactação e promover o desenvolvimento e a manutenção das características sexuais secundárias femininas.",
+            c: "A progesterona e a relaxina são os responsáveis por regular o ciclo reprodutivo feminino, manter a gravidez, preparar as glândulas mamárias para a lactação e promover o desenvolvimento e a manutenção das características sexuais secundárias femininas.",
+            d: "A inibina e a relaxina são os responsáveis por regular o ciclo reprodutivo feminino, manter a gravidez, preparar as glândulas mamárias para a lactação e promover o desenvolvimento e a manutenção das características sexuais secundárias femininas."
+          },
+          answer: "b",
+          explanation: "Alternativa B. O estrogênio e a progesterona são os responsáveis por regular o ciclo sexual feminino, através do feedback à produção de FSH e LH, nas fases ovariana e endometrial do útero."
+        },
+        {
+          id: 7,
+          stem: "As gônadas masculinas, os testículos, são glândulas ovais situadas no escroto. O principal hormônio produzido e secretado pelos testículos é a testosterona, um androgênio ou hormônio sexual masculino. A testosterona estimula a descida dos testículos antes do nascimento, regula a produção de espermatozoides e estimula o desenvolvimento e a manutenção das características sexuais secundárias masculinas, como crescimento da barba e engrossamento da voz. Em relação aos hormônios sexuais masculinos, marque a alternativa correta.",
+          options: {
+            a: "A testosterona estimula a descida dos testículos antes do nascimento, regula a produção de espermatozoides, promove o desenvolvimento e a manutenção das características sexuais secundárias masculinas.",
+            b: "A inibina e a testosterona estimulam a descida dos testículos antes do nascimento, regula a produção de espermatozoides, promove o desenvolvimento e a manutenção das características sexuais secundárias masculinas.",
+            c: "A somatostatina estimula a descida dos testículos antes do nascimento, regula a produção de espermatozoides, promove o desenvolvimento e a manutenção das características sexuais secundárias masculinas.",
+            d: "A inibina e a somatostatina estimulam a descida dos testículos antes do nascimento, regula a produção de espermatozoides, promove o desenvolvimento e a manutenção das características sexuais secundárias masculinas."
+          },
+          answer: "a",
+          explanation: "Alternativa A. O principal hormônio sexual masculino é a testosterona, que estimula a descida dos testículos antes do nascimento, regula a produção de espermatozoides, promove o desenvolvimento e a manutenção das características sexuais secundárias masculinas."
+        },
+        {
+          id: 8,
+          stem: "Os órgãos do sistema genital masculino incluem os testículos, um sistema de ductos (epididimo, ducto deferente, ductos ejaculatórios e uretra), glândulas acessórias do sistema genital masculino (glândulas seminais, próstata e glândulas bulbouretrais) e várias estruturas de suporte, inclusive o escroto e o pênis. Em relação à anatomia desse sistema, marque a alternativa correta:",
+          options: {
+            a: "O escroto, a estrutura que alberga os testículos, é constituído de pele rígida e a tela subcutânea subjacente que pende da raiz do pênis.",
+            b: "Os testículos são ovais, em pares, localizados no escroto que têm aproximadamente 5 cm de comprimento e 2,5 cm de diâmetro, e não exercem função glandular.",
+            c: "O funículo espermático é uma estrutura acessória do sistema genital masculino que ascende a partir do escroto.",
+            d: "A uretra masculina é o ducto terminal exclusivo do sistema urinário, não sendo usada como via de passagem para outros sistemas."
+          },
+          answer: "c",
+          explanation: "Alternativa C. Todas as outras alternativas descrevem inadequadamente alguma parte anatômica. O escroto não é de pele rígida, os testículos exercem função de glândula e a uretra masculina é utilizada tanto pelo sistema urinário quanto genital."
+        },
+        {
+          id: 9,
+          stem: "Os ductos do sistema genital masculino armazenam e transportam espermatozoides, mas as glândulas acessórias do sistema genital masculino secretam a maior parte da parte líquida do sêmen. As glândulas acessórias do sistema genital masculino incluem as glândulas seminais, a próstata e as glândulas bulbouretrais. No que tange os aspectos gerais dessas glândulas, marque o incorreto.",
+          options: {
+            a: "Os ductos excretores das glândulas seminais secretam líquido seminal, um líquido alcalino viscoso que contém frutose (um monossacarídeo) e proteínas.",
+            b: "A próstata secreta o líquido prostático, um líquido discretamente ácido (pH de aproximadamente 6,5) que contém ácido cítrico e outras substâncias.",
+            c: "Os ductos excretores das glândulas seminais secretam prostaglandinas, que contribuem para a motilidade e a viabilidade dos espermatozoides e estimulam contrações da musculatura lisa no sistema genital feminino.",
+            d: "A próstata está localizada superiormente à bexiga urinária e circunda a parte prostática da uretra."
+          },
+          answer: "d",
+          explanation: "Alternativa D. A próstata está localizada inferiormente à bexiga, não superiormente."
+        },
+        {
+          id: 10,
+          stem: "O útero, situado entre a bexiga urinária e o reto, tem as dimensões e o formato de uma pêra invertida. O útero é maior nas mulheres que engravidaram recentemente e menor (atrofiado) quando os níveis de hormônios sexuais são baixos, como ocorre após a menopausa. Marque a alternativa que lista somente os hormônios secretados pelo corpo lúteo.",
+          options: {
+            a: "Hormônio folículo-estimulante, hormônio luteinizante, hormônio liberador de gonadotrofina e estrógenos.",
+            b: "Progesterona, estrógenos, relaxina e inibina.",
+            c: "Hormônio folículo-estimulante, hormônio luteinizante, progesterona e estrógenos.",
+            d: "Hormônio folículo-estimulante, hormônio luteinizante e estrógenos."
+          },
+          answer: "b",
+          explanation: "Alternativa B. O corpo lúteo, através de estímulo do hormônio luteinizante, secreta progesterona, estrógenos, relaxina e inibina."
+        },
+        {
+          id: 11,
+          stem: "Do ponto de vista químico, a saliva é composta por água (99,5%) e solutos (0,5%). Entre os solutos estão íons, incluindo sódio, potássio, cloreto, bicarbonato e fosfato. Estão também presentes alguns gases dissolvidos e várias substâncias orgânicas, incluindo ureia e ácido úrico, muco, imunoglobulina A, a enzima bacteriolítica lisozima e a amilase salivar (uma enzima digestiva que atua sobre o amido). Os íons cloreto na saliva ativam a amilase salivar, uma enzima que inicia a degradação do amido na boca. Sobre a digestão química exercida pela ptialina, assinale a alternativa correta.",
+          options: {
+            a: "A amilase salivar cliva o amido em maltose, maltotriose e alfa-dextrinas.",
+            b: "A amilase salivar cliva o amido em glicose, lipídios e alfa-dextrinas.",
+            c: "A amilase salivar cliva o amido em glicose, proteínas e alfa-dextrinas.",
+            d: "A amilase salivar cliva o amido em lactose, proteínas e alfa-dextrinas."
+          },
+          answer: "a",
+          explanation: "Alternativa A. A amilase salivar (ptialina) inicia a digestão do amido na boca, produzindo principalmente maltose, maltotriose e alfa-dextrinas. As outras alternativas listam inadequadamente os produtos da clivagem do amido."
+        },
+        {
+          id: 12,
+          stem: "O líquido fortemente ácido do estômago mata muitos microrganismos dos alimentos. O HCl desnatura (desenovela) parcialmente as proteínas nos alimentos e estimula a secreção de hormônios que promovem o fluxo da bile e do suco pancreático. A digestão enzimática das proteínas também começa no estômago. A única enzima proteolítica (que digere proteínas) no estômago é a:",
+          options: {
+            a: "Pepsina, a qual é secretada pelas células principais gástricas.",
+            b: "Pepsina, a qual é secretada pelas células principais do esôfago.",
+            c: "Lipase gástrica, a qual é secretada pelas células principais gástricas.",
+            d: "Lipase gástrica, a qual é secretada pelas células principais do esôfago."
+          },
+          answer: "a",
+          explanation: "Alternativa A. A pepsina é a principal enzima responsável pela digestão de proteínas no estômago e é produzida pelas células principais gástricas, inicialmente na forma de pepsinogênio. Não há enzimas relevantes para digestão química sendo produzidas pelo esôfago, e a lipase gástrica não atua sobre proteínas."
+        },
+        {
+          id: 13,
+          stem: "O pâncreas produz diariamente 1.200 a 1.500 ml de suco pancreático, um líquido claro e incolor, que consiste principalmente em água, alguns sais, bicarbonato de sódio e várias enzimas. O bicarbonato de sódio faz com que o suco pancreático tenha um pH ligeiramente alcalino (7,1 a 8,2) responsável por tamponar o suco gástrico ácido no quimo, a fim de interromper a ação da pepsina do estômago e criar o pH adequado para a ação das enzimas digestivas no intestino delgado. As enzimas no suco pancreático incluem:",
+          options: {
+            a: "Amilase pancreática, que digere proteínas em amido.",
+            b: "Tripsina, que digere proteínas em partes menores.",
+            c: "Lipase pancreática, que digere amido em dissacarídeos.",
+            d: "Desoxirribonuclease, que digere galactose em lactose."
+          },
+          answer: "b",
+          explanation: "Alternativa B. A tripsina é uma enzima pancreática que participa da digestão das proteínas, quebrando-as em peptídeos menores no intestino delgado. As outras estão erradas pois listam inadequadamente os produtos sobre os quais as enzimas atuam. A amilase pancreática digere carboidratos, a lipase pancreática digere lipídios e a desoxirribonuclease atua sobre DNA."
+        },
+        {
+          id: 14,
+          stem: "Embora os hepatócitos liberem a bile de maneira contínua, a sua produção e secreção aumentam quando o sangue do sistema porta contém mais ácidos biliares; por conseguinte, à medida que a digestão e a absorção prosseguem no intestino delgado, a liberação de bile aumenta. Entre as refeições, após ter ocorrido a maior parte da absorção, a bile flui para dentro da vesícula biliar para armazenamento, visto que o músculo esfíncter da ampola hepatopancreática fecha a entrada para o duodeno. O esfíncter circunda a ampola hepatopancreática. Além de secretar bile, que é necessária para a absorção das gorduras da dieta, o fígado desempenha muitas outras funções vitais, exceto:",
+          options: {
+            a: "Metabolismo dos carboidratos. O fígado é particularmente importante na manutenção de um nível de glicemia normal.",
+            b: "Processamento de fármacos e hormônios. O fígado tem a capacidade de destoxificar substâncias, como o álcool, e excretar fármacos, como a penicilina, a eritromicina e as sulfonamidas, na bile.",
+            c: "Armazenamento. Além do glicogênio, o fígado constitui um importante local de armazenamento para determinadas vitaminas (A, B12, D, E e K) e minerais (ferro e cobre).",
+            d: "Absorção. A capacidade do fígado de absorver monossacarídeos é enorme, estima-se que seja de 120 g/hora. Dessa maneira, todos os carboidratos dietéticos que são digeridos normalmente são absorvidos, deixando apenas a celulose e as fibras não digeríveis nas fezes."
+          },
+          answer: "d",
+          explanation: "Alternativa D. O fígado exerce funções como metabolismo de carboidratos, armazenamento de vitaminas e minerais e processamento de fármacos e hormônios. A absorção dos nutrientes ocorre principalmente no intestino delgado, jamais no fígado."
+        },
+        {
+          id: 15,
+          stem: "O intestino grosso, com cerca de 1,5 m de comprimento e 6,5 cm de diâmetro nos seres humanos vivos e cadáveres, estende-se do íleo até o ânus. Está fixado à parede posterior do abdome pelo seu mesocolo, que consiste em uma dupla camada de peritônio. Do ponto de vista estrutural, as três principais regiões do intestino grosso são:",
+          options: {
+            a: "Ceco, colo e reto.",
+            b: "Duodeno, íleo e reto.",
+            c: "Ceco, íleo e reto.",
+            d: "Duodeno, colo e reto."
+          },
+          answer: "a",
+          explanation: "Alternativa A. As três principais regiões estruturais do intestino grosso são ceco, colo e reto. O duodeno pertence ao intestino delgado, e a mesma lógica se aplica ao íleo."
+        }
+      ]
+    };
+  </script>
+  <script src="quiz.js"></script>
+</body>
+</html>

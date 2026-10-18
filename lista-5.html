@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Questões Nº 5 | Morfofisiologia II</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">A</div>
+        <div class="brand-text">
+          <h1>Monitoria de Morfofisiologia dos Sistemas II</h1>
+          <p>Afya Faculdade de Parnaíba</p>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="btn-back">← Todas as Listas</a>
+        <button class="btn-icon" id="themeToggle" type="button">
+          <span id="themeIcon">🌙</span>
+          <span id="themeText">Modo Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="results-panel" id="resultsPanel">
+      <div class="results-header">
+        <h3>Resultado da Avaliação</h3>
+        <p id="resultsFeedback"></p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statScore">0%</div>
+          <div class="stat-label">Aproveitamento</div>
+        </div>
+        <div class="stat-card stat-correct">
+          <div class="stat-value" id="statCorrect">0</div>
+          <div class="stat-label">Acertos</div>
+        </div>
+        <div class="stat-card stat-wrong">
+          <div class="stat-value" id="statWrong">0</div>
+          <div class="stat-label">Erros</div>
+        </div>
+        <div class="stat-card stat-unanswered">
+          <div class="stat-value" id="statUnanswered">0</div>
+          <div class="stat-label">Em Branco</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar">
+      <div class="status-top">
+        <span class="status-info" id="activeQuizTitle">Lista de Questões Nº 5</span>
+        <span class="status-count" id="progressText">0 de 5 respondidas</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all" type="button">Todas as Questões</button>
+      <button class="filter-btn" data-filter="correct" type="button">Apenas Acertos</button>
+      <button class="filter-btn" data-filter="wrong" type="button">Erros / Em Branco</button>
+    </div>
+
+    <div class="questions-list" id="questionsContainer"></div>
+
+    <div class="quiz-actions">
+      <button class="btn-primary" id="btnGrade" type="button">Ver Gabarito e Avaliar Desempenho</button>
+      <button class="btn-secondary" id="btnReset" type="button">Refazer Lista</button>
+      <a href="index.html" class="btn-secondary">← Voltar ao Menu Principal</a>
+    </div>
+  </main>
+
+  <script>
+    window.QUIZ_DATA = {
+      id: "lista_5",
+      title: "Lista de Questões Nº 5 — Simulado de Sistema Linfático (Anatomia e Fisiologia)",
+      questions: [
+        {
+          id: 1,
+          stem: "Os capilares linfáticos são pequenos vasos que se originam nos espaços intersticiais, entre as células e os capilares sanguíneos. O líquido que entra neles passa a se chamar linfa e é conduzido por vasos progressivamente maiores até retornar à circulação sanguínea. Acerca da anatomofisiologia dos capilares linfáticos, marque a alternativa correta.",
+          options: {
+            a: "Os capilares linfáticos têm extremidades abertas e são menos permeáveis que os capilares sanguíneos, o que impede a entrada de proteínas.",
+            b: "Os capilares linfáticos têm extremidade fechada em fundo cego e são mais permeáveis que os capilares sanguíneos, permitindo a entrada de proteínas e de microrganismos.",
+            c: "Os capilares linfáticos transportam sangue desoxigenado dos tecidos até os linfonodos.",
+            d: "Os capilares linfáticos estão presentes em todos os tecidos, inclusive no sistema nervoso central, na medula óssea e nos tecidos avasculares."
+          },
+          answer: "b",
+          explanation: "Alternativa B. Os capilares linfáticos têm extremidade em fundo cego e suas células endoteliais se sobrepõem como válvulas de via única, o que torna o vaso muito permeável a proteínas, restos celulares e microrganismos. A alternativa A está errada porque a permeabilidade é maior, não menor. A C está errada porque a linfa é um líquido derivado do líquido intersticial, não sangue. A D está errada porque os capilares linfáticos estão ausentes no sistema nervoso central, na medula óssea, na cartilagem, na epiderme e em outros tecidos avasculares."
+        },
+        {
+          id: 2,
+          stem: "A linfa flui dos vasos linfáticos para dois canais principais, que a devolvem ao sangue na junção entre as veias jugular interna e subclávia. Acerca da drenagem linfática, marque a alternativa correta.",
+          options: {
+            a: "O ducto linfático direito drena a linfa de todo o corpo abaixo do diafragma e do lado esquerdo da cabeça, do pescoço e do tórax.",
+            b: "O ducto torácico é mais curto que o ducto linfático direito e se origina na cisterna do quilo, na região cervical.",
+            c: "O ducto torácico se origina na cisterna do quilo e drena a linfa de todo o corpo, exceto a do quadrante superior direito.",
+            d: "O ducto linfático direito drena a linfa de todo o corpo, exceto a do lado esquerdo da cabeça e do pescoço."
+          },
+          answer: "c",
+          explanation: "Alternativa C. O ducto torácico (cerca de 38 a 45 cm) se origina na cisterna do quilo, no abdome, e drena a linfa dos membros inferiores, do abdome, da pelve, do lado esquerdo da cabeça, do pescoço e do tórax e do membro superior esquerdo. Ele desemboca na junção entre as veias jugular interna e subclávia esquerdas. O ducto linfático direito (cerca de 1 cm) drena apenas o quadrante superior direito (lado direito da cabeça, do pescoço, do tórax e o membro superior direito)."
+        },
+        {
+          id: 3,
+          stem: "Os linfonodos são estruturas ovais ou em forma de rim, encapsuladas, distribuídas ao longo dos vasos linfáticos. Há cerca de 600 deles no corpo, e estão agrupados em cadeias como as cervicais, axilares e inguinais. Em relação à anatomia e à fisiologia dos linfonodos, marque a alternativa incorreta.",
+          options: {
+            a: "A linfa é filtrada ao passar pelos linfonodos, e os macrófagos presentes neles fagocitam microrganismos e partículas estranhas.",
+            b: "Os vasos linfáticos aferentes entram pela face convexa do linfonodo e conduzem a linfa ao seio subcapsular.",
+            c: "Os linfócitos B proliferam e se diferenciam em plasmócitos nos centros germinativos dos folículos linfoides do córtex.",
+            d: "Os vasos linfáticos eferentes deixam o linfonodo pela face convexa e são mais numerosos que os aferentes, o que acelera o fluxo da linfa."
+          },
+          answer: "d",
+          explanation: "Alternativa D. Os vasos eferentes saem pelo hilo do linfonodo, não pela face convexa, e são em menor número que os aferentes. Essa diferença faz a linfa fluir mais lentamente pelo linfonodo, o que aumenta o tempo de contato com macrófagos e linfócitos. As demais alternativas descrevem corretamente a filtragem, o trajeto da linfa e a ativação de linfócitos B no córtex."
+        },
+        {
+          id: 4,
+          stem: "O timo é um órgão linfático bilobado, de consistência mole, essencial para a imunidade adaptativa. Em lactentes e crianças, ele é relativamente grande, e seu tamanho e sua atividade diminuem após a puberdade. Acerca do timo, marque a alternativa correta.",
+          options: {
+            a: "Localiza-se no mediastino superior, posteriormente ao esterno, e é o local de maturação dos linfócitos T.",
+            b: "Localiza-se no mediastino posterior, anteriormente à coluna vertebral, e é o local de maturação dos linfócitos B.",
+            c: "Localiza-se no hipocôndrio esquerdo, entre o estômago e o rim esquerdo, e é o local de destruição de hemácias envelhecidas.",
+            d: "Localiza-se no mediastino superior e atinge sua máxima atividade na senescência, com maturação dos linfócitos B."
+          },
+          answer: "a",
+          explanation: "Alternativa A. O timo fica no mediastino superior, posterior ao esterno e anterior aos grandes vasos. Nele, os pré-linfócitos T originados na medula óssea amadurecem e se tornam imunocompetentes. As alternativas B e C trocam a localização e a função (a C descreve o baço). A D está errada porque o timo involui com a idade e amadurece linfócitos T, não B."
+        },
+        {
+          id: 5,
+          stem: "O baço é o maior órgão linfático do corpo. Mede cerca de 12 cm de comprimento, está localizado no hipocôndrio esquerdo, entre o estômago e o diafragma, e é revestido por cápsula de tecido conjuntivo denso. Seu parênquima é dividido em polpa branca e polpa vermelha. Em relação às funções do baço, marque a alternativa incorreta.",
+          options: {
+            a: "Na polpa branca, linfócitos B e T respondem a antígenos presentes no sangue, e os macrófagos fagocitam microrganismos.",
+            b: "Na polpa vermelha, ocorre a remoção de hemácias envelhecidas ou danificadas, e o ferro delas é reaproveitado.",
+            c: "O baço filtra a linfa que chega a ele por vasos linfáticos aferentes, de forma semelhante aos linfonodos.",
+            d: "O baço atua como reservatório de sangue e de plaquetas, e na vida fetal exerce função hematopoética."
+          },
+          answer: "c",
+          explanation: "Alternativa C. O baço não possui vasos linfáticos aferentes, então não filtra linfa. Ele filtra sangue, porque é um órgão do sistema linfático que recebe e devolve sangue pela artéria e pela veia esplênica. Quem filtra a linfa são os linfonodos. As demais alternativas descrevem corretamente as funções imunológicas (polpa branca), a remoção de hemácias velhas (polpa vermelha), o reservatório de sangue e a hematopoese fetal."
+        }
+      ]
+    };
+  </script>
+  <script src="quiz.js"></script>
+</body>
+</html>
