@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulado Avaliação N2 | Morfofisiologia II</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">A</div>
+        <div class="brand-text">
+          <h1>Monitoria de Morfofisiologia dos Sistemas II</h1>
+          <p>Afya Faculdade de Parnaíba</p>
+        </div>
+      </a>
+      <div class="header-actions">
+        <a href="index.html" class="btn-back">← Todas as Listas</a>
+        <button class="btn-icon" id="themeToggle" type="button">
+          <span id="themeIcon">🌙</span>
+          <span id="themeText">Modo Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="results-panel" id="resultsPanel">
+      <div class="results-header">
+        <h3>Resultado da Avaliação</h3>
+        <p id="resultsFeedback"></p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statScore">0%</div>
+          <div class="stat-label">Aproveitamento</div>
+        </div>
+        <div class="stat-card stat-correct">
+          <div class="stat-value" id="statCorrect">0</div>
+          <div class="stat-label">Acertos</div>
+        </div>
+        <div class="stat-card stat-wrong">
+          <div class="stat-value" id="statWrong">0</div>
+          <div class="stat-label">Erros</div>
+        </div>
+        <div class="stat-card stat-unanswered">
+          <div class="stat-value" id="statUnanswered">0</div>
+          <div class="stat-label">Em Branco</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar">
+      <div class="status-top">
+        <span class="status-info" id="activeQuizTitle">Simulado Avaliação N2</span>
+        <span class="status-count" id="progressText">0 de 16 respondidas</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all" type="button">Todas as Questões</button>
+      <button class="filter-btn" data-filter="correct" type="button">Apenas Acertos</button>
+      <button class="filter-btn" data-filter="wrong" type="button">Erros / Em Branco</button>
+    </div>
+
+    <div class="questions-list" id="questionsContainer"></div>
+
+    <div class="quiz-actions">
+      <button class="btn-primary" id="btnGrade" type="button">Ver Gabarito e Avaliar Desempenho</button>
+      <button class="btn-secondary" id="btnReset" type="button">Refazer Simulado</button>
+      <a href="index.html" class="btn-secondary">← Voltar ao Menu Principal</a>
+    </div>
+  </main>
+
+  <script>
+    window.QUIZ_DATA = {
+      id: "simulado_n2",
+      title: "Simulado de Sistema Linfático, Sistema Respiratório e Sistema Urinário/Excretor (Avaliação N2)",
+      questions: [
+        {
+          id: 1,
+          stem: "O sistema linfático é formado pela linfa, pelos vasos linfáticos e por estruturas e órgãos que contêm tecido linfático. A linfa é o líquido intersticial que penetra nos capilares linfáticos, e esse sistema é fundamental para a homeostasia dos líquidos corporais e para a imunidade. Acerca das funções do sistema linfático, marque a alternativa incorreta.",
+          options: {
+            a: "Drenar o excesso de líquido intersticial e as proteínas plasmáticas que extravasaram dos capilares sanguíneos, devolvendo-os ao sangue.",
+            b: "Transportar lipídios da dieta e vitaminas lipossolúveis absorvidos no trato gastrointestinal, por meio dos vasos linfáticos das vilosidades intestinais (vasos lácteos).",
+            c: "Proteger o corpo contra microrganismos por meio de respostas imunes, com a proliferação e a ação de linfócitos.",
+            d: "Transportar oxigênio dos pulmões para os tecidos, pois a linfa é rica em hemoglobina."
+          },
+          answer: "d",
+          explanation: "Alternativa D. A linfa não transporta oxigênio e não contém hemoglobina; essa proteína está nas hemácias, e o transporte de O₂ é função do sangue. As demais alternativas descrevem funções reais do sistema linfático: drenagem do excesso de líquido intersticial, transporte de lipídios da dieta e defesa imunológica."
+        },
+        {
+          id: 2,
+          stem: "Os órgãos e tecidos linfáticos são classificados em primários e secundários. Os primários são os locais onde as células-tronco se dividem e se desenvolvem em linfócitos B e T maduros e imunocompetentes. Os secundários são os locais onde ocorre a maior parte das respostas imunes. Acerca desse tema, marque a alternativa correta.",
+          options: {
+            a: "Os órgãos linfáticos primários são a medula óssea vermelha, onde amadurecem os linfócitos B, e o timo, onde amadurecem os linfócitos T.",
+            b: "Os órgãos linfáticos primários são o baço e os linfonodos, onde ocorre a maturação dos linfócitos B e T.",
+            c: "A medula óssea vermelha e o timo são órgãos linfáticos secundários, nos quais os linfócitos reconhecem antígenos e iniciam a resposta imune.",
+            d: "O timo é o local de maturação dos linfócitos B, e a medula óssea vermelha é o local de maturação dos linfócitos T."
+          },
+          answer: "a",
+          explanation: "Alternativa A. Os linfócitos B amadurecem na medula óssea vermelha e os linfócitos T amadurecem no timo, que é maior na infância e involui com a idade. Baço, linfonodos e nódulos linfáticos são órgãos secundários, onde ocorre a maior parte das respostas imunes."
+        },
+        {
+          id: 3,
+          stem: "Os linfonodos são estruturas ovais ou em formato de feijão, distribuídas ao longo dos vasos linfáticos e presentes em grande número nas regiões cervical, axilar e inguinal. Eles filtram a linfa, removendo microrganismos e partículas estranhas, e abrigam linfócitos e macrófagos. Em relação à estrutura dos linfonodos e ao fluxo da linfa através deles, marque a alternativa correta.",
+          options: {
+            a: "A linfa entra por um único vaso linfático eferente e sai por vários vasos linfáticos aferentes.",
+            b: "A linfa entra por vários vasos linfáticos aferentes, que perfuram a cápsula no hilo, e sai por vários vasos linfáticos eferentes na face convexa.",
+            c: "A linfa entra por vários vasos linfáticos aferentes, percorre os seios do linfonodo e sai por um ou dois vasos linfáticos eferentes, localizados no hilo.",
+            d: "Os linfonodos filtram o sangue arterial que chega pelo hilo, enquanto a linfa passa ao largo de sua estrutura."
+          },
+          answer: "c",
+          explanation: "Alternativa C. Os vasos aferentes (vários) entram pela face convexa do linfonodo, a linfa percorre os seios e sai por um ou dois vasos eferentes no hilo. Os linfonodos filtram a linfa, não o sangue."
+        },
+        {
+          id: 4,
+          stem: "O baço é a maior massa única de tecido linfático do corpo. Tem formato oval, localiza-se no quadrante superior esquerdo do abdome, entre o estômago e o diafragma, e é revestido por uma cápsula de tecido conjuntivo denso. Seu parênquima é dividido em polpa branca e polpa vermelha. No que tange à anatomofisiologia do baço, marque a alternativa incorreta.",
+          options: {
+            a: "A polpa branca é tecido linfático, formado por linfócitos e macrófagos dispostos ao redor de ramos da artéria esplênica.",
+            b: "O baço recebe vasos linfáticos aferentes e filtra a linfa, de modo semelhante aos linfonodos.",
+            c: "Na polpa vermelha, macrófagos removem da circulação hemácias envelhecidas, plaquetas e outras células sanguíneas danificadas.",
+            d: "O baço pode armazenar plaquetas e, durante a vida fetal, participa da produção de células sanguíneas."
+          },
+          answer: "b",
+          explanation: "Alternativa B. O baço não possui vasos linfáticos aferentes: ele filtra o sangue, não a linfa. Quem filtra a linfa são os linfonodos."
+        },
+        {
+          id: 5,
+          stem: "A linfa flui dos capilares linfáticos para vasos linfáticos cada vez maiores e, por fim, retorna ao sangue por dois ductos principais, que desembocam em veias na base do pescoço. Em relação a esses ductos, marque a alternativa correta.",
+          options: {
+            a: "O ducto linfático direito drena a linfa de todo o corpo abaixo do diafragma e desemboca na veia cava inferior.",
+            b: "O ducto torácico drena apenas o membro superior direito e o lado direito da cabeça e do pescoço, e desemboca na junção das veias jugular interna e subclávia direitas.",
+            c: "O ducto torácico origina-se na cisterna do quilo, drena apenas a linfa dos membros inferiores e desemboca no átrio direito.",
+            d: "O ducto torácico origina-se na cisterna do quilo, drena a linfa do lado esquerdo da cabeça, do pescoço e do tórax, do membro superior esquerdo e de todo o corpo abaixo do diafragma, e desemboca na junção das veias jugular interna e subclávia esquerdas."
+          },
+          answer: "d",
+          explanation: "Alternativa D. O ducto torácico nasce na cisterna do quilo e drena todo o corpo abaixo do diafragma, além do lado esquerdo da cabeça, do pescoço e do tórax e do membro superior esquerdo, desembocando na junção das veias jugular interna e subclávia esquerdas. O ducto linfático direito drena apenas o quadrante superior direito (membro superior direito e lado direito da cabeça, do pescoço e do tórax)."
+        },
+        {
+          id: 6,
+          stem: "O sistema respiratório é formado pelo nariz, pela faringe, pela laringe, pela traqueia, pelos brônquios e pelos pulmões. Do ponto de vista funcional, divide-se em zona condutora, que leva o ar até os pulmões, e zona respiratória, onde ocorrem as trocas gasosas. Acerca dessa divisão, marque a alternativa correta.",
+          options: {
+            a: "A zona condutora inclui os ductos alveolares e os alvéolos, que são os locais de troca gasosa.",
+            b: "A zona condutora inclui o nariz, a faringe, a laringe, a traqueia, os brônquios e os bronquíolos terminais, e a zona respiratória inclui os bronquíolos respiratórios, os ductos alveolares, os sacos alveolares e os alvéolos.",
+            c: "A zona respiratória inclui o nariz e a faringe, que aquecem, umedecem e filtram o ar inspirado.",
+            d: "A traqueia e os brônquios principais fazem parte da zona respiratória, pois nesses locais o ar entra em contato direto com o sangue."
+          },
+          answer: "b",
+          explanation: "Alternativa B. A zona condutora vai do nariz até os bronquíolos terminais e apenas conduz o ar. A troca gasosa começa nos bronquíolos respiratórios, que já possuem alguns alvéolos, e se estende aos ductos alveolares, aos sacos alveolares e aos alvéolos."
+        },
+        {
+          id: 7,
+          stem: "A faringe é um tubo em forma de funil, com cerca de 13 cm de comprimento, que se inicia nas cóanas e se estende até a cartilagem cricóidea. Sua parede é composta por músculo esquelético revestido por túnica mucosa, e ela serve de via de passagem para o ar e para o alimento. Anatomicamente, é dividida em nasofaringe, orofaringe e laringofaringe. Sobre a faringe, marque a alternativa correta.",
+          options: {
+            a: "A nasofaringe faz parte apenas da via respiratória, contém as tonsilas faríngeas (adenoides) e recebe as aberturas das tubas auditivas.",
+            b: "A orofaringe faz parte apenas da via respiratória e contém as tonsilas faríngeas (adenoides).",
+            c: "A laringofaringe é a parte superior da faringe, onde se localizam as tonsilas palatinas e as aberturas das tubas auditivas.",
+            d: "A orofaringe é a porção que se comunica com a cavidade nasal por meio das cóanas e recebe as aberturas das tubas auditivas."
+          },
+          answer: "a",
+          explanation: "Alternativa A. A nasofaringe é exclusivamente respiratória, contém a tonsila faríngea e recebe as tubas auditivas. A orofaringe e a laringofaringe são vias comuns ao ar e ao alimento. As tonsilas palatinas e linguais ficam na orofaringe, e a laringofaringe é a parte inferior, que se continua com a laringe e o esôfago."
+        },
+        {
+          id: 8,
+          stem: "A laringe é um tubo curto de cartilagem e tecido conjuntivo que liga a laringofaringe à traqueia. Sua parede é sustentada por nove peças de cartilagem, sendo três ímpares (tireóidea, epiglote e cricóidea) e três pares (aritenóideas, cuneiformes e corniculadas). Acerca da anatomia da laringe, marque a alternativa incorreta.",
+          options: {
+            a: "A cartilagem tireóidea é a maior da laringe e forma o pomo de Adão, geralmente mais proeminente nos homens pela ação dos andrógenos na puberdade.",
+            b: "A epiglote é uma cartilagem elástica, em forma de folha, que cobre a abertura da laringe durante a deglutição, impedindo a entrada de alimentos e líquidos nas vias aéreas.",
+            c: "As pregas vestibulares, também chamadas de pregas vocais verdadeiras, contêm ligamentos elásticos e são as responsáveis pela produção do som.",
+            d: "A cartilagem cricóidea é um anel de cartilagem hialina que forma a parede inferior da laringe e se liga à traqueia."
+          },
+          answer: "c",
+          explanation: "Alternativa C. As pregas vocais verdadeiras (pregas vocais) é que produzem o som. As pregas vestibulares são as pregas vocais falsas, não participam da fonação e atuam no fechamento da glote, como ao prender o ar."
+        },
+        {
+          id: 9,
+          stem: "Os pulmões são órgãos pareados, em forma de cone, situados na cavidade torácica e separados um do outro pelo coração e por outras estruturas do mediastino. Cada pulmão é envolvido por uma membrana serosa de dupla camada, a pleura. Acerca da anatomia dos pulmões e das pleuras, marque a alternativa correta.",
+          options: {
+            a: "O pulmão direito possui dois lobos, separados por uma fissura oblíqua, e apresenta a incisura cardíaca.",
+            b: "O pulmão esquerdo possui três lobos (superior, médio e inferior), separados pelas fissuras oblíqua e horizontal.",
+            c: "A pleura parietal reveste a superfície dos pulmões, e a pleura visceral reveste a parede torácica e o diafragma.",
+            d: "O pulmão direito possui três lobos (superior, médio e inferior), separados pelas fissuras oblíqua e horizontal, e o pulmão esquerdo possui dois lobos (superior e inferior), separados por uma fissura oblíqua, com a incisura cardíaca onde se acomoda o coração."
+          },
+          answer: "d",
+          explanation: "Alternativa D. O pulmão direito tem três lobos e duas fissuras (oblíqua e horizontal). O esquerdo tem dois lobos, uma fissura oblíqua e a incisura cardíaca. A pleura visceral reveste os pulmões e a pleura parietal reveste a parede torácica e o diafragma."
+        },
+        {
+          id: 10,
+          stem: "Os alvéolos são evaginações em forma de taça, revestidas por epitélio pavimentoso e sustentadas por uma membrana basal elástica. É neles que ocorrem as trocas gasosas entre o ar e o sangue, por difusão através da membrana respiratória. Os alvéolos são agrupados em sacos alveolares e cercados por uma rede de capilares sanguíneos. Sobre as células da parede alveolar, marque a alternativa correta.",
+          options: {
+            a: "Os pneumócitos tipo I formam a maior parte do revestimento alveolar e são o principal local de troca gasosa, enquanto os pneumócitos tipo II secretam o surfactante.",
+            b: "Os pneumócitos tipo I secretam o surfactante, enquanto os pneumócitos tipo II são o principal local de troca gasosa.",
+            c: "O surfactante aumenta a tensão superficial do líquido que reveste os alvéolos, favorecendo o colapso alveolar ao final da expiração.",
+            d: "Os macrófagos alveolares produzem o surfactante e são os principais responsáveis pela difusão de oxigênio e de dióxido de carbono."
+          },
+          answer: "a",
+          explanation: "Alternativa A. Os pneumócitos tipo I são células pavimentosas, ocupam a maior parte da superfície alveolar e realizam a troca gasosa. Os tipo II secretam surfactante, que reduz a tensão superficial e evita o colapso dos alvéolos. Os macrófagos alveolares fagocitam partículas e microrganismos."
+        },
+        {
+          id: 11,
+          stem: "A ventilação pulmonar é o processo de entrada e saída de ar dos pulmões, baseado em gradientes de pressão gerados pela variação do volume da cavidade torácica, conforme a lei de Boyle. Sobre a mecânica da ventilação pulmonar em repouso, marque a alternativa correta.",
+          options: {
+            a: "Na inspiração, o diafragma relaxa e sobe, diminuindo o volume torácico e elevando a pressão intra-alveolar acima da pressão atmosférica.",
+            b: "Na inspiração, a contração do diafragma e dos músculos intercostais externos aumenta o volume da cavidade torácica, reduzindo a pressão intra-alveolar abaixo da pressão atmosférica, e o ar flui para dentro dos pulmões.",
+            c: "A expiração em repouso é um processo ativo, que depende da contração dos músculos intercostais internos e do reto do abdome.",
+            d: "O ar flui para dentro dos pulmões quando a pressão intra-alveolar se torna maior que a pressão atmosférica."
+          },
+          answer: "b",
+          explanation: "Alternativa B. Na inspiração, a contração do diafragma e dos intercostais externos aumenta o volume torácico, a pressão intra-alveolar cai abaixo da atmosférica e o ar flui para dentro. A expiração em repouso é passiva, por retração elástica dos pulmões, e o ar sempre flui da região de maior para a de menor pressão."
+        },
+        {
+          id: 12,
+          stem: "Os rins são órgãos pareados, em formato de feijão, localizados no espaço retroperitoneal, um de cada lado da coluna vertebral, aproximadamente entre as vértebras T12 e L3. Eles regulam a composição e o volume do sangue, formam a urina e participam do controle da pressão arterial e do pH sanguíneo. Cada rim é envolvido por três camadas de tecido. Acerca da anatomia dos rins, marque a alternativa correta.",
+          options: {
+            a: "As três camadas que envolvem o rim, da mais interna para a mais externa, são a fáscia renal, a cápsula adiposa e a cápsula fibrosa.",
+            b: "O rim direito costuma estar ligeiramente mais alto que o esquerdo, pois o baço ocupa espaço abaixo do rim esquerdo.",
+            c: "A cápsula fibrosa é a camada mais interna, a cápsula adiposa é a intermediária e a fáscia renal é a mais externa, e o hilo renal é a abertura por onde passam vasos, nervos e o ureter.",
+            d: "O córtex renal é a região mais interna do rim, enquanto a medula renal, mais externa, é formada pelas pirâmides renais."
+          },
+          answer: "c",
+          explanation: "Alternativa C. De dentro para fora: cápsula fibrosa, cápsula adiposa e fáscia renal. O rim direito é ligeiramente mais baixo que o esquerdo por causa do fígado. O córtex é a região externa e a medula, com as pirâmides renais, é a região interna."
+        },
+        {
+          id: 13,
+          stem: "O néfron é a unidade funcional dos rins e é constituído por um corpúsculo renal, onde o plasma é filtrado, e por um túbulo renal, pelo qual passa o líquido filtrado. Cada rim contém cerca de 1 milhão de néfrons. Sobre a estrutura do néfron, marque a alternativa que apresenta corretamente a sequência percorrida pelo filtrado, a partir da cápsula glomerular (de Bowman).",
+          options: {
+            a: "Cápsula glomerular, túbulo contorcido distal, alça do néfron (de Henle), túbulo contorcido proximal e ducto coletor.",
+            b: "Cápsula glomerular, túbulo contorcido proximal, alça do néfron (de Henle), túbulo contorcido distal e ducto coletor.",
+            c: "Cápsula glomerular, alça do néfron (de Henle), túbulo contorcido proximal, túbulo contorcido distal e ducto coletor.",
+            d: "Cápsula glomerular, túbulo contorcido proximal, túbulo contorcido distal, alça do néfron (de Henle) e ducto coletor."
+          },
+          answer: "b",
+          explanation: "Alternativa B. O filtrado passa pela cápsula glomerular, pelo túbulo contorcido proximal, pela alça do néfron (ramos descendente e ascendente) e pelo túbulo contorcido distal, e segue para o ducto coletor."
+        },
+        {
+          id: 14,
+          stem: "A formação da urina envolve três processos: a filtração glomerular, a reabsorção tubular e a secreção tubular. A filtração ocorre no corpúsculo renal, enquanto a reabsorção e a secreção ocorrem ao longo do túbulo renal e do ducto coletor. No que tange à fisiologia renal, marque a alternativa incorreta.",
+          options: {
+            a: "Na filtração glomerular, a pressão hidrostática do sangue força água e solutos do plasma através da membrana de filtração, formando um filtrado que normalmente não contém células sanguíneas e tem pouquíssimas proteínas.",
+            b: "O túbulo contorcido proximal é o principal local de reabsorção, recuperando a maior parte da água e dos solutos filtrados, inclusive a totalidade da glicose e dos aminoácidos em condições normais.",
+            c: "A glicose é reabsorvida principalmente na alça do néfron, e a presença de glicose na urina é um achado normal em indivíduos saudáveis.",
+            d: "A secreção tubular remove substâncias do sangue e as adiciona ao líquido tubular, como íons H⁺, K⁺, amônia e certos fármacos, contribuindo para o controle do pH sanguíneo."
+          },
+          answer: "c",
+          explanation: "Alternativa C. A glicose é reabsorvida no túbulo contorcido proximal, por cotransporte com Na⁺. Só aparece na urina (glicosúria) quando a glicemia excede a capacidade de reabsorção, como no diabetes mellitus descompensado, e não é um achado normal."
+        },
+        {
+          id: 15,
+          stem: "O volume e a composição da urina são regulados por hormônios que atuam principalmente no túbulo contorcido distal e no ducto coletor. Entre eles estão a aldosterona, o hormônio antidiurético (ADH, ou vasopressina), o peptídeo natriurético atrial (ANP) e o paratormônio. Acerca da regulação hormonal da função renal, marque a alternativa correta.",
+          options: {
+            a: "O ADH, produzido no hipotálamo e liberado pela neuro-hipófise, aumenta a permeabilidade à água do túbulo distal e do ducto coletor, ampliando a reabsorção de água e produzindo urina mais concentrada.",
+            b: "A aldosterona, secretada pela medula da glândula suprarrenal, diminui a reabsorção de Na⁺ e aumenta a reabsorção de K⁺.",
+            c: "O ANP, liberado pelos átrios quando distendidos, aumenta a reabsorção de Na⁺ e de água, elevando a pressão arterial.",
+            d: "O paratormônio reduz a reabsorção renal de Ca²⁺, diminuindo a calcemia."
+          },
+          answer: "a",
+          explanation: "Alternativa A. O ADH aumenta a permeabilidade à água (via aquaporinas) no túbulo distal e no ducto coletor. A aldosterona é secretada pelo córtex da suprarrenal e aumenta a reabsorção de Na⁺ e a secreção de K⁺. O ANP inibe a reabsorção de Na⁺ e de água e reduz a pressão arterial. O paratormônio aumenta a reabsorção renal de Ca²⁺."
+        },
+        {
+          id: 16,
+          stem: "Após ser formada nos rins, a urina é conduzida pelos ureteres até a bexiga urinária, onde é armazenada até ser eliminada pela uretra. A bexiga é um órgão muscular oco, localizado na cavidade pélvica, posteriormente à sínfise púbica, e sua parede contém o músculo detrusor. Em relação à anatomia das vias urinárias e ao controle da micção, marque a alternativa correta.",
+          options: {
+            a: "Os ureteres conduzem a urina apenas pela ação da gravidade, pois suas paredes não possuem musculatura.",
+            b: "A uretra feminina é mais longa que a masculina, com cerca de 20 cm, e serve apenas à passagem da urina.",
+            c: "O músculo detrusor é de músculo esquelético, de contração voluntária, e relaxa durante a micção.",
+            d: "O esfíncter interno da uretra é de músculo liso e de controle involuntário, enquanto o esfíncter externo da uretra é de músculo esquelético e está sob controle voluntário."
+          },
+          answer: "d",
+          explanation: "Alternativa D. O esfíncter interno da uretra é de músculo liso (involuntário) e o externo é de músculo esquelético (voluntário). Os ureteres têm músculo liso e conduzem a urina por peristaltismo. A uretra feminina tem cerca de 4 cm e a masculina cerca de 20 cm, e esta também serve ao sistema genital. O detrusor é de músculo liso e se contrai durante a micção."
+        }
+      ]
+    };
+  </script>
+  <script src="quiz.js"></script>
+</body>
+</html>
